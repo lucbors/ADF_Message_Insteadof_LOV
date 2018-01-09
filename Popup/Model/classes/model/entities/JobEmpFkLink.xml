@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobEmpFkLink"
+  Version="12.2.1.16.48"
+  InheritPersonalization="merge"
+  EntityAssociation="model.entities.JobEmpFkAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.entities.JobEmpFkLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="EmployeesView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.views.EmployeesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="EmployeesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.views.EmployeesView.JobId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="JobsView"
+    Cardinality="-1"
+    Owner="model.entities.JobsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="JobsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.JobsView.JobId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>
